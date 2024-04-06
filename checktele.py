@@ -52,87 +52,60 @@ def check_user(username):
 
 def gen_user(choice):
     if choice == "نص":
-        c = random.choices(a)
-        d = random.choices(b)
-        f = [c[0], d[0], d[0], d[0], d[0], c[0]]
-        username = ''.join(f)
-        if username in banned[0]:
-            c = random.choices(a)
-            d = random.choices(b)
-            f = [c[0], c[0], d[0], d[0], d[0], d[0]]
-            username = ''.join(f)
-    if choice == "ثلاثي":
-        c = random.choices(a)
-        d = random.choices(a)
-        s = random.choices(e)
-        f = [c[0], "_", d[0], "_", s[0]]
-        username = ''.join(f)
-        if username in banned[0]:
-            c = random.choices(a)
-            d = random.choices(b)
-            s = random.choices(e)
-            f = [c[0], "_", d[0], "_", s[0]]
-            username = ''.join(f)
-    if choice == "رباعي":
-        c = d = random.choices(e)
+        c = random.choices(e)
         d = random.choices(e)
         f = [c[0], d[0], "_", c[0], c[0]]
         random.shuffle(f)
         username = ''.join(f)
         if username in banned[0]:
-            c = d = random.choices(e)
+            c = random.choices(e)
             d = random.choices(e)
             f = [c[0], d[0], "_", c[0], c[0]]
             random.shuffle(f)
             username = ''.join(f)
-    if choice == "حرفين":
-        c = d = random.choices(a)
-        d = random.choices(a)
-        f = [c[0], d[0], d[0], c[0], c[0]]
-        random.shuffle(f)
-        username = ''.join(f)
-        if username in banned[0]:
-            c = d = random.choices(e)
-            d = random.choices(e)
-            f = [c[0], d[0], d[0], c[0], c[0]]
-            random.shuffle(f)
-            username = ''.join(f)
-    if choice == "حرف":
-        c = d = random.choices(a)
-        d = random.choices(a)
-        f = [c[0], d[0], c[0], c[0], c[0]]
-        random.shuffle(f)
-        username = ''.join(f)
-        if username in banned[0]:
-            c = d = random.choices(e)
-            d = random.choices(e)
-            f = [c[0], d[0], c[0], c[0], c[0]]
-            random.shuffle(f)
-            username = ''.join(f)
-    if choice == "سداسي":
+        else:
+            pass
+    elif choice == "ثلاثي":
+        c = random.choices(a)
+        d = random.choices(e)
+        s = random.choices(e)
+        f = [c[0], "_", d[0], "_", s[0]]
+        username = "".join(f)
+    elif choice == "سداسيات":
         c = d = random.choices(e)
         d = random.choices(e)
-        f = [c[0], d[0], c[0], c[0], c[0], d[0]]
+        f = [c[0], c[0], c[0], d[0], d[0], d[0]]
         random.shuffle(f)
-        username = ''.join(f)
-        if username in banned[0]:
-            c = d = random.choices(e)
-            d = random.choices(e)
-            f = [c[0], d[0], c[0], c[0], c[0], d[0]]
-            random.shuffle(f)
-            username = ''.join(f)
-    if choice == "سداسيات":
+        username = "".join(f)
+    elif choice == "بوتات":
+        c = random.choices(a)
+        d = random.choices(e)
+        s = random.choices(e)
+        f = [c[0], s[0], d[0]]
+        # random.shuffle(f)
+        username = "".join(f)
+        username = username + "bot"
+
+    elif choice == "حرفين":
+        c = random.choices(e)
+        d = random.choices(e)
+        f = [c[0], c[0], d[0], d[0], c[0]]
+        random.shuffle(f)
+        username = "".join(f)
+
+    elif choice == "خماسي":
         c = d = random.choices(e)
         d = random.choices(e)
-        f = [c[0], d[0], c[0], c[0], d[0], d[0]]
+        f = [c[0], c[0], c[0], c[0], d[0]]
         random.shuffle(f)
-        username = ''.join(f)
-        if username in banned[0]:
-            c = d = random.choices(e)
-            d = random.choices(e)
-            f = [c[0], d[0], c[0], c[0], d[0], d[0]]
-            random.shuffle(f)
-            username = ''.join(f)
+        username = "".join(f)
+
+    elif choice == "سباعيات":
+        c = d = random.choices(e)
+        d = random.choices(e)
+        f = [c[0], c[0], c[0], c[0], d[0], c[0], c[0]]
+        random.shuffle(f)
+        username = "".join(f)
     elif choice == "تيست":
         c = d = random.choices(a)
         d = random.choices(b)
@@ -150,27 +123,20 @@ async def _(event):
         '''
 **-- -- -- -- -- -- -- -- --
  الانواع :
- 	
  ثلاثي
- s_r_e
  -- -- -- -- - 
  نص
- s5555s - ss5555
+ sx_xx
  -- -- -- -- -- -- -- -- -- -- --
-  رباعي 
-  ss_sx
+  سداسي
  -- -- -- -- -- 
-  حرفين
-  xaaxx
+  بوتات
  -- -- -- -- --
- حرف
- wwwwn
+ خماسي
  -- -- -- -- -- 
- سداسي
- sxxxxs
+ خماسي حرفين
  -- -- -- -- -- 
- سداسيات
- sxsxsx
+ سباعيات
  -- -- -- -- -- 
    طريقه الصيد هيه كالتالي
  - .صيد + نوع الصيد تكتب الاسم 
